@@ -1,0 +1,1997 @@
+<?xml version="1.0"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="TaskGroupFactoryConfig" nillable="true" type="TaskGroupFactoryConfig" />
+  <xs:complexType name="TaskGroupFactoryConfig">
+    <xs:sequence>
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="TCPXmlMessageServer" nillable="true" type="TCPXmlMessageServer" />
+        <xs:element minOccurs="0" maxOccurs="1" name="UDPXmlMessageServer" nillable="true" type="UDPXmlMessageServer" />
+      </xs:choice>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="BatchDeliveryResponser" nillable="true" type="BatchDeliveryResponser" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="ChangeControlRegionStatusResponser" nillable="true" type="ChangeControlRegionStatusResponser" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="ChangeAGVStatusResponser" nillable="true" type="ChangeAGVStatusResponser" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="ChangeDeviceRunStatusResponser" nillable="true" type="ChangeDeviceRunStatusResponser" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="ChangeStorageBinGoodsResponser" nillable="true" type="ChangeStorageBinGoodsResponser" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="ChangeStorageBinRunStatusResponser" nillable="true" type="ChangeStorageBinRunStatusResponser" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CombinStorageBinResponser" nillable="true" type="CombinStorageBinResponser" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="ClearStorageResponser" nillable="true" type="ClearStorageResponser" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="ChangeControlRegionEnableStateResponser" nillable="true" type="ChangeControlRegionEnableStateResponser" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="ChangeStorageBinStateTypeResponser" nillable="true" type="ChangeStorageBinStateTypeResponser" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryStatusOfStorageBinResponser" nillable="true" type="QueryStatusOfStorageBinResponser" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryStatusOfAGVResponser" nillable="true" type="QueryStatusOfAGVResponser" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryControlRegionStatusResponser" nillable="true" type="QueryControlRegionStatusResponser" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryControlRegionEnableStateResponser" nillable="true" type="QueryControlRegionEnableStateResponser" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="RroductQueryResponser" nillable="true" type="RroductQueryResponser" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageQueryResponser" nillable="true" type="StorageQueryResponser" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="SystemSettingsCallResponser" nillable="true" type="SystemSettingsCallResponser" />
+      </xs:choice>
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="DatabaseCreaterLoggerFactory" nillable="true" type="DatabaseCreaterLoggerFactory" />
+        <xs:element minOccurs="0" maxOccurs="1" name="RedisCreaterLoggerFactory" nillable="true" type="RedisCreaterLoggerFactory" />
+        <xs:element minOccurs="0" maxOccurs="1" name="EmptyCreaterLoggerFactory" nillable="true" type="EmptyCreaterLoggerFactory" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Log4netTaskGroupCreaterLoggerFactory" nillable="true" type="Log4netTaskGroupCreaterLoggerFactory" />
+      </xs:choice>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupSpecialOperationOfPredefined" nillable="true" type="TaskGroupSpecialOperationOfPredefined" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupSpecialOperationForLift" nillable="true" type="TaskGroupSpecialOperationForLift" />
+      </xs:choice>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="BreakdownConditionOfCancelingTaskGroup" nillable="true" type="BreakdownConditionOfCancelingTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageLineConditionOfCancelingTaskGroup" nillable="true" type="StorageLineConditionOfCancelingTaskGroup" />
+      </xs:choice>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="AdaptivePilingTaskGroupTransactionWhenCompleted" nillable="true" type="AdaptivePilingTaskGroupTransactionWhenCompleted" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="GoodsTransportByTrailerTaskGroupTransactionWhenCompleted" nillable="true" type="GoodsTransportByTrailerTaskGroupTransactionWhenCompleted" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="DetectStorageTaskGroupTransactionWhenCompleted" nillable="true" type="DetectStorageTaskGroupTransactionWhenCompleted" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="RecoverStorageBinWhenTaskGroupCancelled" nillable="true" type="RecoverStorageBinWhenTaskGroupCancelled" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="ScanCodeOfGoodsInStorageTaskGroupTransactionWhenCompleted" nillable="true" type="ScanCodeOfGoodsInStorageTaskGroupTransactionWhenCompleted" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="ScanCodeOfGoodsOnAGVTaskGroupTransactionWhenCompleted" nillable="true" type="ScanCodeOfGoodsOnAGVTaskGroupTransactionWhenCompleted" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="PredefinedTaskGroupTransaction" nillable="true" type="PredefinedTaskGroupTransaction" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CarryTaskWithGetShiftGroupCreater" nillable="true" type="CarryTaskWithGetShiftGroupCreater" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="DetectSourceStorageTaskGroupCreater" nillable="true" type="DetectSourceStorageTaskGroupCreater" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="DetectTargetStorageTaskGroupCreater" nillable="true" type="DetectTargetStorageTaskGroupCreater" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="GetAndMoveTaskGroupCreater" nillable="true" type="GetAndMoveTaskGroupCreater" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="MoveToStorageTaskGroupCreater" nillable="true" type="MoveToStorageTaskGroupCreater" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="WaitTaskGroupCreater" nillable="true" type="WaitTaskGroupCreater" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="MoveToPostureTaskGroupCreater" nillable="true" type="MoveToPostureTaskGroupCreater" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="PutTaskGroupCreater" nillable="true" type="PutTaskGroupCreater" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="GetTaskGroupCreater" nillable="true" type="GetTaskGroupCreater" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CarryTaskGroupCreater" nillable="true" type="CarryTaskGroupCreater" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="ReturnToParkTaskGroupCreater" nillable="true" type="ReturnToParkTaskGroupCreater" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="ScanCodeOfGoodsInStorageBinTaskGroupCreater" nillable="true" type="ScanCodeOfGoodsInStorageBinTaskGroupCreater" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="ScanCodeOfGoodsOnAGVTaskGroupCreater" nillable="true" type="ScanCodeOfGoodsOnAGVTaskGroupCreater" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="SpecifiedTaskClassTaskGroupCreater" nillable="true" type="SpecifiedTaskClassTaskGroupCreater" />
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TCPXmlMessageServer">
+    <xs:attribute name="Port" type="xs:int" />
+    <xs:attribute name="ShowMessageReceived" type="xs:boolean" />
+    <xs:attribute name="ShowMessageSent" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="UDPXmlMessageServer">
+    <xs:attribute name="Port" type="xs:int" />
+    <xs:attribute name="ShowMessageReceived" type="xs:boolean" />
+    <xs:attribute name="ShowMessageSent" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="BatchDeliveryResponser">
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ChangeControlRegionStatusResponser">
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ChangeAGVStatusResponser">
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ChangeDeviceRunStatusResponser">
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ChangeStorageBinGoodsResponser">
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ChangeStorageBinRunStatusResponser">
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="CombinStorageBinResponser">
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ClearStorageResponser">
+    <xs:attribute name="EnableStorageBinClear" type="xs:boolean" />
+    <xs:attribute name="EnableStorageLineClear" type="xs:boolean" />
+    <xs:attribute name="EnableStorageGroupClear" type="xs:boolean" />
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ChangeControlRegionEnableStateResponser">
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ChangeStorageBinStateTypeResponser">
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="QueryStatusOfStorageBinResponser">
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="QueryStatusOfAGVResponser">
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="QueryControlRegionStatusResponser">
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="QueryControlRegionEnableStateResponser">
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="RroductQueryResponser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExtraInformation" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="StorageQueryResponser">
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="SystemSettingsCallResponser">
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="DatabaseCreaterLoggerFactory" />
+  <xs:complexType name="RedisCreaterLoggerFactory">
+    <xs:attribute name="Host" type="xs:string" />
+    <xs:attribute name="Port" type="xs:int" />
+    <xs:attribute name="Password" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="EmptyCreaterLoggerFactory" />
+  <xs:complexType name="Log4netTaskGroupCreaterLoggerFactory" />
+  <xs:complexType name="TaskGroupSpecialOperationOfPredefined">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterFlag" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SpecialOperation" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="TaskType" type="TaskType" />
+  </xs:complexType>
+  <xs:simpleType name="TaskType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Brake" />
+      <xs:enumeration value="Stop" />
+      <xs:enumeration value="MoveTo" />
+      <xs:enumeration value="Loading" />
+      <xs:enumeration value="Unloading" />
+      <xs:enumeration value="RaiseLift" />
+      <xs:enumeration value="Leave" />
+      <xs:enumeration value="PutIn" />
+      <xs:enumeration value="PutOut" />
+      <xs:enumeration value="PutDownWithPush" />
+      <xs:enumeration value="PutDownWithMoveOut" />
+      <xs:enumeration value="PutUpWithMoveOut" />
+      <xs:enumeration value="MoveLift" />
+      <xs:enumeration value="ReachGet" />
+      <xs:enumeration value="ReachPut" />
+      <xs:enumeration value="ReachLeave" />
+      <xs:enumeration value="DetectPallet" />
+      <xs:enumeration value="RaisePut" />
+      <xs:enumeration value="RaiseGet" />
+      <xs:enumeration value="RaiseLeave" />
+      <xs:enumeration value="ScanCode" />
+      <xs:enumeration value="TaskClassNameSpecific" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TaskGroupSpecialOperationForLift">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BreakdownConditionOfCancelingTaskGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterFlag" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupCondition" nillable="true" type="TaskGroupCondition" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionForDetectStorageTaskGroup" nillable="true" type="TaskGroupConditionForDetectStorageTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionForScanCodeTaskGroup" nillable="true" type="TaskGroupConditionForScanCodeTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionWithTransaction" nillable="true" type="TaskGroupConditionWithTransaction" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionUsingTask" nillable="true" type="TaskGroupConditionUsingTask" />
+      </xs:choice>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AGV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Region" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TaskGroupCondition">
+    <xs:attribute name="Property" type="xs:string" />
+    <xs:attribute name="StringMatchType" type="StringMatchType" />
+    <xs:attribute name="Value" type="xs:string" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:simpleType name="StringMatchType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Equals" />
+      <xs:enumeration value="StartsWith" />
+      <xs:enumeration value="EndsWith" />
+      <xs:enumeration value="Regex" />
+      <xs:enumeration value="BiggerThan" />
+      <xs:enumeration value="SmallerThan" />
+      <xs:enumeration value="NumericBiggerThan" />
+      <xs:enumeration value="NumericSmallerThan" />
+      <xs:enumeration value="SplitBySemicolon" />
+      <xs:enumeration value="SplitByComma" />
+      <xs:enumeration value="IncludedSplitBySemicolon" />
+      <xs:enumeration value="IncludingSplitBySemicolon" />
+      <xs:enumeration value="IncludedSplitByComma" />
+      <xs:enumeration value="IncludingSplitByComma" />
+      <xs:enumeration value="EarlyThan" />
+      <xs:enumeration value="LaterThan" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TaskGroupConditionForDetectStorageTaskGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RackType" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="HasGoods" type="xs:boolean" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="TaskGroupConditionForScanCodeTaskGroup">
+    <xs:attribute name="Success" type="xs:boolean" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="TaskGroupConditionWithTransaction">
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="TaskGroupConditionUsingTask">
+    <xs:attribute name="Property" type="xs:string" />
+    <xs:attribute name="StringMatchType" type="StringMatchType" />
+    <xs:attribute name="Value" type="xs:string" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="StorageLineConditionOfCancelingTaskGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterFlag" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupCondition" nillable="true" type="TaskGroupCondition" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionForDetectStorageTaskGroup" nillable="true" type="TaskGroupConditionForDetectStorageTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionForScanCodeTaskGroup" nillable="true" type="TaskGroupConditionForScanCodeTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionWithTransaction" nillable="true" type="TaskGroupConditionWithTransaction" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionUsingTask" nillable="true" type="TaskGroupConditionUsingTask" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="StorageBinFunction" type="StorageBinFunction" />
+  </xs:complexType>
+  <xs:simpleType name="StorageBinFunction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Source" />
+      <xs:enumeration value="Target" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AdaptivePilingTaskGroupTransactionWhenCompleted">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterFlag" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupCondition" nillable="true" type="TaskGroupCondition" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionForDetectStorageTaskGroup" nillable="true" type="TaskGroupConditionForDetectStorageTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionForScanCodeTaskGroup" nillable="true" type="TaskGroupConditionForScanCodeTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionWithTransaction" nillable="true" type="TaskGroupConditionWithTransaction" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionUsingTask" nillable="true" type="TaskGroupConditionUsingTask" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="Property" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="GoodsTransportByTrailerTaskGroupTransactionWhenCompleted">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterFlag" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupCondition" nillable="true" type="TaskGroupCondition" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionForDetectStorageTaskGroup" nillable="true" type="TaskGroupConditionForDetectStorageTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionForScanCodeTaskGroup" nillable="true" type="TaskGroupConditionForScanCodeTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionWithTransaction" nillable="true" type="TaskGroupConditionWithTransaction" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionUsingTask" nillable="true" type="TaskGroupConditionUsingTask" />
+      </xs:choice>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinPair" nillable="true" type="StorageBinPair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StorageBinPair">
+    <xs:attribute name="StorageBinSource" type="xs:string" />
+    <xs:attribute name="StorageBinTarget" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="DetectStorageTaskGroupTransactionWhenCompleted">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterFlag" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupCondition" nillable="true" type="TaskGroupCondition" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionForDetectStorageTaskGroup" nillable="true" type="TaskGroupConditionForDetectStorageTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionForScanCodeTaskGroup" nillable="true" type="TaskGroupConditionForScanCodeTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionWithTransaction" nillable="true" type="TaskGroupConditionWithTransaction" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionUsingTask" nillable="true" type="TaskGroupConditionUsingTask" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="Property" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="RecoverStorageBinWhenTaskGroupCancelled">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterFlag" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupCondition" nillable="true" type="TaskGroupCondition" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionForDetectStorageTaskGroup" nillable="true" type="TaskGroupConditionForDetectStorageTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionForScanCodeTaskGroup" nillable="true" type="TaskGroupConditionForScanCodeTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionWithTransaction" nillable="true" type="TaskGroupConditionWithTransaction" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionUsingTask" nillable="true" type="TaskGroupConditionUsingTask" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="StorageBinFunction" type="StorageBinFunction" />
+  </xs:complexType>
+  <xs:complexType name="ScanCodeOfGoodsInStorageTaskGroupTransactionWhenCompleted">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterFlag" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupCondition" nillable="true" type="TaskGroupCondition" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionForDetectStorageTaskGroup" nillable="true" type="TaskGroupConditionForDetectStorageTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionForScanCodeTaskGroup" nillable="true" type="TaskGroupConditionForScanCodeTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionWithTransaction" nillable="true" type="TaskGroupConditionWithTransaction" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionUsingTask" nillable="true" type="TaskGroupConditionUsingTask" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="Property" type="xs:string" />
+    <xs:attribute name="ValueForFailure" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ScanCodeOfGoodsOnAGVTaskGroupTransactionWhenCompleted">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterFlag" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupCondition" nillable="true" type="TaskGroupCondition" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionForDetectStorageTaskGroup" nillable="true" type="TaskGroupConditionForDetectStorageTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionForScanCodeTaskGroup" nillable="true" type="TaskGroupConditionForScanCodeTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionWithTransaction" nillable="true" type="TaskGroupConditionWithTransaction" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionUsingTask" nillable="true" type="TaskGroupConditionUsingTask" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="Property" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="PredefinedTaskGroupTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterFlag" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupCondition" nillable="true" type="TaskGroupCondition" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionForDetectStorageTaskGroup" nillable="true" type="TaskGroupConditionForDetectStorageTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionForScanCodeTaskGroup" nillable="true" type="TaskGroupConditionForScanCodeTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionWithTransaction" nillable="true" type="TaskGroupConditionWithTransaction" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupConditionUsingTask" nillable="true" type="TaskGroupConditionUsingTask" />
+      </xs:choice>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupType" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="ChangeOtherStorageBinRunStatusAction" nillable="true" type="ChangeOtherStorageBinRunStatusAction" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="ChangeOtherStorageBinRunStatusActionUsingTask" nillable="true" type="ChangeOtherStorageBinRunStatusActionUsingTask" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="ChangeOtherStorageBinStateTypeAction" nillable="true" type="ChangeOtherStorageBinStateTypeAction" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="RightPushTaskGroupIDToRedisListAction" nillable="true" type="RightPushTaskGroupIDToRedisListAction" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="UploadTaskGroupToRedisAction" nillable="true" type="UploadTaskGroupToRedisAction" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="UpdateTaskGroupFieldToRedisSetAction" nillable="true" type="UpdateTaskGroupFieldToRedisSetAction" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="KeepStorageLineInformationAction" nillable="true" type="KeepStorageLineInformationAction" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="ChangeAGVRunStatusAction" nillable="true" type="ChangeAGVRunStatusAction" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="ChangeStorageBinRunStatusActionUsingTask" nillable="true" type="ChangeStorageBinRunStatusActionUsingTask" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="ChangeStorageBinRunStatusAction" nillable="true" type="ChangeStorageBinRunStatusAction" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="ChangeStorageBinStateTypeAction" nillable="true" type="ChangeStorageBinStateTypeAction" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="TaskGroupStage" type="TaskGroupStage" />
+  </xs:complexType>
+  <xs:complexType name="ChangeOtherStorageBinRunStatusAction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PropertyAndValue" nillable="true" type="PropertyAndValue" />
+    </xs:sequence>
+    <xs:attribute name="StorageBinID" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="PropertyAndValue">
+    <xs:attribute name="Property" type="xs:string" />
+    <xs:attribute name="Value" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ChangeOtherStorageBinRunStatusActionUsingTask">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PropertyAndValue" nillable="true" type="PropertyAndValue" />
+    </xs:sequence>
+    <xs:attribute name="StorageBinID" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ChangeOtherStorageBinStateTypeAction">
+    <xs:attribute name="StorageBinID" type="xs:string" />
+    <xs:attribute name="StateType" type="StateType" />
+    <xs:attribute name="Goods" type="xs:string" />
+  </xs:complexType>
+  <xs:simpleType name="StateType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="StandBy" />
+      <xs:enumeration value="WaitingIn" />
+      <xs:enumeration value="Busy" />
+      <xs:enumeration value="WaitingOut" />
+      <xs:enumeration value="Other" />
+      <xs:enumeration value="Waiting" />
+      <xs:enumeration value="Error" />
+      <xs:enumeration value="Disable" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RightPushTaskGroupIDToRedisListAction">
+    <xs:attribute name="RedisKey" type="xs:string" />
+    <xs:attribute name="RedisConfiguration" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="UploadTaskGroupToRedisAction">
+    <xs:attribute name="RedisConfiguration" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="UpdateTaskGroupFieldToRedisSetAction">
+    <xs:attribute name="Filed" type="xs:string" />
+    <xs:attribute name="Value" type="xs:string" />
+    <xs:attribute name="ExpireSecond" type="xs:double" />
+    <xs:attribute name="RedisConfiguration" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="KeepStorageLineInformationAction">
+    <xs:attribute name="StorageBinFunction" type="StorageBinFunction" />
+    <xs:attribute name="LogFile" type="xs:string" />
+    <xs:attribute name="BlockWhileLogging" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="ChangeAGVRunStatusAction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PropertyAndValue" nillable="true" type="PropertyAndValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ChangeStorageBinRunStatusActionUsingTask">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PropertyAndValue" nillable="true" type="PropertyAndValue" />
+    </xs:sequence>
+    <xs:attribute name="StorageBinFunction" type="StorageBinFunction" />
+  </xs:complexType>
+  <xs:complexType name="ChangeStorageBinRunStatusAction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PropertyAndValue" nillable="true" type="PropertyAndValue" />
+    </xs:sequence>
+    <xs:attribute name="StorageBinFunction" type="StorageBinFunction" />
+  </xs:complexType>
+  <xs:complexType name="ChangeStorageBinStateTypeAction">
+    <xs:attribute name="StorageBinFunction" type="StorageBinFunction" />
+    <xs:attribute name="StateType" type="StateType" />
+    <xs:attribute name="Goods" type="xs:string" />
+  </xs:complexType>
+  <xs:simpleType name="TaskGroupStage">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Created" />
+      <xs:enumeration value="Arranged" />
+      <xs:enumeration value="Cancelled" />
+      <xs:enumeration value="Completed" />
+      <xs:enumeration value="TaskCompleted" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CarryTaskWithGetShiftGroupCreater">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCountOfAGV" nillable="true" type="CreaterConditionForCountOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForTime" nillable="true" type="CreaterConditionForTime" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForArrangedTaskGroups" nillable="true" type="CreaterConditionForArrangedTaskGroups" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBreakdownAGVInRegions" nillable="true" type="CreaterConditionForBreakdownAGVInRegions" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLastTaskGroupOfAGV" nillable="true" type="CreaterConditionForLastTaskGroupOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForWaitingTimeOfAGV" nillable="true" type="CreaterConditionForWaitingTimeOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLowBatteryOfAGV" nillable="true" type="CreaterConditionForLowBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePathOfArrangedTasks" nillable="true" type="CreaterConditionForExclusivePathOfArrangedTasks" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePath" nillable="true" type="CreaterConditionForExclusivePath" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfAGV" nillable="true" type="CreaterConditionForPropertyOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBatteryOfAGV" nillable="true" type="CreaterConditionForBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCarryGoodsOfAGV" nillable="true" type="CreaterConditionForCarryGoodsOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCheckAGVPositionCloseTo" nillable="true" type="CreaterConditionForCheckAGVPositionCloseTo" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionOfDevice" nillable="true" type="CreaterConditionOfDevice" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForStateTypeOfStorageBin" nillable="true" type="CreaterConditionForStateTypeOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForSystemSettings" nillable="true" type="CreaterConditionForSystemSettings" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionSet" nillable="true" type="CreaterConditionSet" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfStorageBin" nillable="true" type="CreaterConditionForPropertyOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForIDOfAGV" nillable="true" type="CreaterConditionForIDOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForDirectionOfAGV" nillable="true" type="CreaterConditionForDirectionOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPositionOfAGV" nillable="true" type="CreaterConditionForPositionOfAGV" />
+      </xs:choice>
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="DefaultAGVStrategy" nillable="true" type="DefaultAGVStrategy" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ClosestAGVStrategy" nillable="true" type="ClosestAGVStrategy" />
+      </xs:choice>
+      <xs:element minOccurs="0" maxOccurs="1" name="TransportationSelecterOfPredefine" nillable="true" type="TransportationSelecterOfPredefine" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BufferStorageBinSelecter" nillable="true" type="ArrayOf4" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BufferTransportationConditions" nillable="true" type="ArrayOf5" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AppendedTaskGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupStyle" nillable="true" type="TaskGroupStyle" />
+    </xs:sequence>
+    <xs:attribute name="ShiftName" type="xs:string" />
+    <xs:attribute name="SourceStorageFunction" type="xs:string" />
+    <xs:attribute name="TargetStorageFunction" type="xs:string" />
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="Cancelable" type="xs:boolean" />
+    <xs:attribute name="Priority" type="xs:int" />
+  </xs:complexType>
+  <xs:complexType name="CreaterConditionForCountOfAGV">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCountOfAGV" nillable="true" type="CreaterConditionForCountOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForTime" nillable="true" type="CreaterConditionForTime" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForArrangedTaskGroups" nillable="true" type="CreaterConditionForArrangedTaskGroups" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBreakdownAGVInRegions" nillable="true" type="CreaterConditionForBreakdownAGVInRegions" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLastTaskGroupOfAGV" nillable="true" type="CreaterConditionForLastTaskGroupOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForWaitingTimeOfAGV" nillable="true" type="CreaterConditionForWaitingTimeOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLowBatteryOfAGV" nillable="true" type="CreaterConditionForLowBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePathOfArrangedTasks" nillable="true" type="CreaterConditionForExclusivePathOfArrangedTasks" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePath" nillable="true" type="CreaterConditionForExclusivePath" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfAGV" nillable="true" type="CreaterConditionForPropertyOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBatteryOfAGV" nillable="true" type="CreaterConditionForBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCarryGoodsOfAGV" nillable="true" type="CreaterConditionForCarryGoodsOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCheckAGVPositionCloseTo" nillable="true" type="CreaterConditionForCheckAGVPositionCloseTo" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionOfDevice" nillable="true" type="CreaterConditionOfDevice" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForStateTypeOfStorageBin" nillable="true" type="CreaterConditionForStateTypeOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForSystemSettings" nillable="true" type="CreaterConditionForSystemSettings" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionSet" nillable="true" type="CreaterConditionSet" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfStorageBin" nillable="true" type="CreaterConditionForPropertyOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForIDOfAGV" nillable="true" type="CreaterConditionForIDOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForDirectionOfAGV" nillable="true" type="CreaterConditionForDirectionOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPositionOfAGV" nillable="true" type="CreaterConditionForPositionOfAGV" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="IncludingCurrent" type="xs:boolean" />
+    <xs:attribute name="Minimum" type="xs:int" />
+    <xs:attribute name="Maximum" type="xs:int" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="CreaterConditionForTime">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="StartTime" type="xs:string" />
+    <xs:attribute name="EndTime" type="xs:string" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="CreaterConditionForArrangedTaskGroups">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterFlag" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Minimum" type="xs:int" />
+    <xs:attribute name="Maximum" type="xs:int" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="CreaterConditionForBreakdownAGVInRegions">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AGV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Region" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="CreaterConditionForLastTaskGroupOfAGV">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterFlag" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="CreaterConditionForWaitingTimeOfAGV">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Seconds" type="xs:float" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="CreaterConditionForLowBatteryOfAGV">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="CreaterConditionForExclusivePathOfArrangedTasks">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AGV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExclusivePathNo" nillable="true" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="CreaterConditionForExclusivePath">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AGV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExclusivePathNo" nillable="true" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="CreaterConditionForPropertyOfAGV">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Property" type="xs:string" />
+    <xs:attribute name="StringMatchType" type="StringMatchType" />
+    <xs:attribute name="Value" type="xs:string" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="CreaterConditionForBatteryOfAGV">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Percentage" type="xs:float" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="CreaterConditionForCarryGoodsOfAGV">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AGV" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="CarryGoods" type="xs:boolean" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="CreaterConditionForCheckAGVPositionCloseTo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AGV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Position" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Distance" type="xs:double" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="CreaterConditionOfDevice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="DeviceId" type="xs:string" />
+    <xs:attribute name="Property" type="xs:string" />
+    <xs:attribute name="StringMatchType" type="StringMatchType" />
+    <xs:attribute name="Value" type="xs:string" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="CreaterConditionForStateTypeOfStorageBin">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StateType" nillable="true" type="StateType" />
+    </xs:sequence>
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="CreaterConditionForSystemSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Setting" type="xs:string" />
+    <xs:attribute name="StringMatchType" type="StringMatchType" />
+    <xs:attribute name="Value" type="xs:string" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="CreaterConditionSet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCountOfAGV" nillable="true" type="CreaterConditionForCountOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForTime" nillable="true" type="CreaterConditionForTime" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForArrangedTaskGroups" nillable="true" type="CreaterConditionForArrangedTaskGroups" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBreakdownAGVInRegions" nillable="true" type="CreaterConditionForBreakdownAGVInRegions" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLastTaskGroupOfAGV" nillable="true" type="CreaterConditionForLastTaskGroupOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForWaitingTimeOfAGV" nillable="true" type="CreaterConditionForWaitingTimeOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLowBatteryOfAGV" nillable="true" type="CreaterConditionForLowBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePathOfArrangedTasks" nillable="true" type="CreaterConditionForExclusivePathOfArrangedTasks" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePath" nillable="true" type="CreaterConditionForExclusivePath" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfAGV" nillable="true" type="CreaterConditionForPropertyOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBatteryOfAGV" nillable="true" type="CreaterConditionForBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCarryGoodsOfAGV" nillable="true" type="CreaterConditionForCarryGoodsOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCheckAGVPositionCloseTo" nillable="true" type="CreaterConditionForCheckAGVPositionCloseTo" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionOfDevice" nillable="true" type="CreaterConditionOfDevice" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForStateTypeOfStorageBin" nillable="true" type="CreaterConditionForStateTypeOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForSystemSettings" nillable="true" type="CreaterConditionForSystemSettings" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionSet" nillable="true" type="CreaterConditionSet" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfStorageBin" nillable="true" type="CreaterConditionForPropertyOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForIDOfAGV" nillable="true" type="CreaterConditionForIDOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForDirectionOfAGV" nillable="true" type="CreaterConditionForDirectionOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPositionOfAGV" nillable="true" type="CreaterConditionForPositionOfAGV" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="ConditionOperation" type="ConditionOperation" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="CreaterConditionForPropertyOfStorageBin">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBin" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Property" type="xs:string" />
+    <xs:attribute name="StringMatchType" type="StringMatchType" />
+    <xs:attribute name="Value" type="xs:string" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="CreaterConditionForIDOfAGV">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AGV" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="CreaterConditionForDirectionOfAGV">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="RadianStart" type="xs:double" />
+    <xs:attribute name="RadianEnd" type="xs:double" />
+    <xs:attribute name="Mode2PI" type="xs:boolean" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="CreaterConditionForPositionOfAGV">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AGV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Region" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:simpleType name="ConditionOperation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Or" />
+      <xs:enumeration value="And" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DefaultAGVStrategy" />
+  <xs:complexType name="ClosestAGVStrategy">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AGV" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="CarryGoods" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="TransportationSelecterOfPredefine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SourceStorageBinSelecter" nillable="true" type="ArrayOf0" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TargetStorageBinSelecter" nillable="true" type="ArrayOf3" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TransportationConditionOfExchangeForStorageLine" nillable="true" type="TransportationConditionOfExchangeForStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TransportationConditionOfExpression" nillable="true" type="TransportationConditionOfExpression" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TransportationConditionOfSingleExpression" nillable="true" type="TransportationConditionOfSingleExpression" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TransportationConditionOfDualExpression" nillable="true" type="TransportationConditionOfDualExpression" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TransportationConditionSet" nillable="true" type="TransportationConditionSet" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="SelectMode" type="SelectMode" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOf0">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterForSegment" nillable="true" type="StorageBinSelecterForSegment" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterForStorageLine" nillable="true" type="StorageBinSelecterForStorageLine" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterForStorageLineByRegex" nillable="true" type="StorageBinSelecterForStorageLineByRegex" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterFromSQLScript" nillable="true" type="StorageBinSelecterFromSQLScript" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterSet" nillable="true" type="StorageBinSelecterSet" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterWithSpecifiedGroup" nillable="true" type="StorageBinSelecterWithSpecifiedGroup" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterOfPredefine" nillable="true" type="StorageBinSelecterOfPredefine" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="StorageBinSelecterForSegment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterForSegment" nillable="true" type="StorageBinSelecterForSegment" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterForStorageLine" nillable="true" type="StorageBinSelecterForStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterForStorageLineByRegex" nillable="true" type="StorageBinSelecterForStorageLineByRegex" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterFromSQLScript" nillable="true" type="StorageBinSelecterFromSQLScript" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterSet" nillable="true" type="StorageBinSelecterSet" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterWithSpecifiedGroup" nillable="true" type="StorageBinSelecterWithSpecifiedGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterOfPredefine" nillable="true" type="StorageBinSelecterOfPredefine" />
+      </xs:choice>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditions" nillable="true" type="StorageBinConditionBase" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForExchangingInStorageLine" nillable="true" type="StorageBinConditionForExchangingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForPropertyOfStorageBin" nillable="true" type="StorageBinConditionForPropertyOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForReachableLoadingInStorageLine" nillable="true" type="StorageBinConditionForReachableLoadingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForReachableUnloadingInStorageLine" nillable="true" type="StorageBinConditionForReachableUnloadingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLine" nillable="true" type="StorageBinConditionForStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForNoConflictInStorageLine" nillable="true" type="StorageBinConditionForNoConflictInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLineNotRequired" nillable="true" type="StorageBinConditionForStorageLineNotRequired" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfDirectToStorage" nillable="true" type="StorageBinConditionOfDirectToStorage" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfExistRelatedTaskGroup" nillable="true" type="StorageBinConditionOfExistRelatedTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfExpression" nillable="true" type="StorageBinConditionOfExpression" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionSet" nillable="true" type="StorageBinConditionSet" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLineNotPlaned" nillable="true" type="StorageBinConditionForStorageLineNotPlaned" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForLockGroup" nillable="true" type="StorageBinConditionForLockGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStateType" nillable="true" type="StorageBinConditionForStateType" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfDualExpression" nillable="true" type="StorageBinConditionOfDualExpression" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForGoodsCount" nillable="true" type="StorageBinConditionForGoodsCount" />
+      </xs:choice>
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrder" nillable="true" type="StorageBinOrderBase" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForConditionFirst" nillable="true" type="StorageBinOrderForConditionFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForBreadthFirst" nillable="true" type="StorageBinOrderForBreadthFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForDistanceBetweenStorages" nillable="true" type="StorageBinOrderForDistanceBetweenStorages" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForRunStatusOfStorageLine" nillable="true" type="StorageBinOrderForRunStatusOfStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderWithStorageLineDeepFirst" nillable="true" type="StorageBinOrderWithStorageLineDeepFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForRunStatus" nillable="true" type="StorageBinOrderForRunStatus" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="Function" type="StorageBinFunction" />
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="StorageBinSelecterForStorageLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageLine" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditions" nillable="true" type="StorageBinConditionBase" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForExchangingInStorageLine" nillable="true" type="StorageBinConditionForExchangingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForPropertyOfStorageBin" nillable="true" type="StorageBinConditionForPropertyOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForReachableLoadingInStorageLine" nillable="true" type="StorageBinConditionForReachableLoadingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForReachableUnloadingInStorageLine" nillable="true" type="StorageBinConditionForReachableUnloadingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLine" nillable="true" type="StorageBinConditionForStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForNoConflictInStorageLine" nillable="true" type="StorageBinConditionForNoConflictInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLineNotRequired" nillable="true" type="StorageBinConditionForStorageLineNotRequired" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfDirectToStorage" nillable="true" type="StorageBinConditionOfDirectToStorage" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfExistRelatedTaskGroup" nillable="true" type="StorageBinConditionOfExistRelatedTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfExpression" nillable="true" type="StorageBinConditionOfExpression" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionSet" nillable="true" type="StorageBinConditionSet" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLineNotPlaned" nillable="true" type="StorageBinConditionForStorageLineNotPlaned" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForLockGroup" nillable="true" type="StorageBinConditionForLockGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStateType" nillable="true" type="StorageBinConditionForStateType" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfDualExpression" nillable="true" type="StorageBinConditionOfDualExpression" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForGoodsCount" nillable="true" type="StorageBinConditionForGoodsCount" />
+      </xs:choice>
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrder" nillable="true" type="StorageBinOrderBase" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForConditionFirst" nillable="true" type="StorageBinOrderForConditionFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForBreadthFirst" nillable="true" type="StorageBinOrderForBreadthFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForDistanceBetweenStorages" nillable="true" type="StorageBinOrderForDistanceBetweenStorages" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForRunStatusOfStorageLine" nillable="true" type="StorageBinOrderForRunStatusOfStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderWithStorageLineDeepFirst" nillable="true" type="StorageBinOrderWithStorageLineDeepFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForRunStatus" nillable="true" type="StorageBinOrderForRunStatus" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="Function" type="StorageBinFunction" />
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="StorageBinConditionBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="StorageBinConditionForExchangingInStorageLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SourceStorageBinConditionCollection" nillable="true" type="ArrayOf1" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TargetStorageBinConditionCollection" nillable="true" type="ArrayOf2" />
+    </xs:sequence>
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOf1">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForExchangingInStorageLine" nillable="true" type="StorageBinConditionForExchangingInStorageLine" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForPropertyOfStorageBin" nillable="true" type="StorageBinConditionForPropertyOfStorageBin" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForReachableLoadingInStorageLine" nillable="true" type="StorageBinConditionForReachableLoadingInStorageLine" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForReachableUnloadingInStorageLine" nillable="true" type="StorageBinConditionForReachableUnloadingInStorageLine" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLine" nillable="true" type="StorageBinConditionForStorageLine" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForNoConflictInStorageLine" nillable="true" type="StorageBinConditionForNoConflictInStorageLine" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLineNotRequired" nillable="true" type="StorageBinConditionForStorageLineNotRequired" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfDirectToStorage" nillable="true" type="StorageBinConditionOfDirectToStorage" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfExistRelatedTaskGroup" nillable="true" type="StorageBinConditionOfExistRelatedTaskGroup" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfExpression" nillable="true" type="StorageBinConditionOfExpression" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionSet" nillable="true" type="StorageBinConditionSet" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLineNotPlaned" nillable="true" type="StorageBinConditionForStorageLineNotPlaned" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForLockGroup" nillable="true" type="StorageBinConditionForLockGroup" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStateType" nillable="true" type="StorageBinConditionForStateType" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfDualExpression" nillable="true" type="StorageBinConditionOfDualExpression" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForGoodsCount" nillable="true" type="StorageBinConditionForGoodsCount" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="StorageBinConditionForPropertyOfStorageBin">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Property" type="xs:string" />
+    <xs:attribute name="StringMatchType" type="StringMatchType" />
+    <xs:attribute name="Value" type="xs:string" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="StorageBinConditionForReachableLoadingInStorageLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="StorageBinConditionForReachableUnloadingInStorageLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="StorageBinConditionForStorageLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Minimum" type="xs:int" />
+    <xs:attribute name="Maximum" type="xs:int" />
+    <xs:attribute name="MetCount" type="xs:int" />
+    <xs:attribute name="IgnoreCurrent" type="xs:boolean" />
+    <xs:attribute name="FirstExpression" type="xs:string" />
+    <xs:attribute name="StringMatchType" type="StringMatchType" />
+    <xs:attribute name="SecondExpression" type="xs:string" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="StorageBinConditionForNoConflictInStorageLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForExchangingInStorageLine" nillable="true" type="StorageBinConditionForExchangingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForPropertyOfStorageBin" nillable="true" type="StorageBinConditionForPropertyOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForReachableLoadingInStorageLine" nillable="true" type="StorageBinConditionForReachableLoadingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForReachableUnloadingInStorageLine" nillable="true" type="StorageBinConditionForReachableUnloadingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLine" nillable="true" type="StorageBinConditionForStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForNoConflictInStorageLine" nillable="true" type="StorageBinConditionForNoConflictInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLineNotRequired" nillable="true" type="StorageBinConditionForStorageLineNotRequired" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfDirectToStorage" nillable="true" type="StorageBinConditionOfDirectToStorage" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfExistRelatedTaskGroup" nillable="true" type="StorageBinConditionOfExistRelatedTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfExpression" nillable="true" type="StorageBinConditionOfExpression" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionSet" nillable="true" type="StorageBinConditionSet" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLineNotPlaned" nillable="true" type="StorageBinConditionForStorageLineNotPlaned" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForLockGroup" nillable="true" type="StorageBinConditionForLockGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStateType" nillable="true" type="StorageBinConditionForStateType" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfDualExpression" nillable="true" type="StorageBinConditionOfDualExpression" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForGoodsCount" nillable="true" type="StorageBinConditionForGoodsCount" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="Function" type="StorageBinFunction" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="StorageBinConditionForStorageLineNotRequired">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForExchangingInStorageLine" nillable="true" type="StorageBinConditionForExchangingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForPropertyOfStorageBin" nillable="true" type="StorageBinConditionForPropertyOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForReachableLoadingInStorageLine" nillable="true" type="StorageBinConditionForReachableLoadingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForReachableUnloadingInStorageLine" nillable="true" type="StorageBinConditionForReachableUnloadingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLine" nillable="true" type="StorageBinConditionForStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForNoConflictInStorageLine" nillable="true" type="StorageBinConditionForNoConflictInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLineNotRequired" nillable="true" type="StorageBinConditionForStorageLineNotRequired" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfDirectToStorage" nillable="true" type="StorageBinConditionOfDirectToStorage" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfExistRelatedTaskGroup" nillable="true" type="StorageBinConditionOfExistRelatedTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfExpression" nillable="true" type="StorageBinConditionOfExpression" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionSet" nillable="true" type="StorageBinConditionSet" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLineNotPlaned" nillable="true" type="StorageBinConditionForStorageLineNotPlaned" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForLockGroup" nillable="true" type="StorageBinConditionForLockGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStateType" nillable="true" type="StorageBinConditionForStateType" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfDualExpression" nillable="true" type="StorageBinConditionOfDualExpression" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForGoodsCount" nillable="true" type="StorageBinConditionForGoodsCount" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="StorageBinConditionOfDirectToStorage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="StorageBinFunction" type="xs:string" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="StorageBinConditionOfExistRelatedTaskGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterFlag" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Function" type="StorageBinFunction" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="StorageBinConditionOfExpression">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="FirstExpression" type="xs:string" />
+    <xs:attribute name="StringMatchType" type="StringMatchType" />
+    <xs:attribute name="SecondExpression" type="xs:string" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="StorageBinConditionSet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForExchangingInStorageLine" nillable="true" type="StorageBinConditionForExchangingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForPropertyOfStorageBin" nillable="true" type="StorageBinConditionForPropertyOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForReachableLoadingInStorageLine" nillable="true" type="StorageBinConditionForReachableLoadingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForReachableUnloadingInStorageLine" nillable="true" type="StorageBinConditionForReachableUnloadingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLine" nillable="true" type="StorageBinConditionForStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForNoConflictInStorageLine" nillable="true" type="StorageBinConditionForNoConflictInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLineNotRequired" nillable="true" type="StorageBinConditionForStorageLineNotRequired" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfDirectToStorage" nillable="true" type="StorageBinConditionOfDirectToStorage" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfExistRelatedTaskGroup" nillable="true" type="StorageBinConditionOfExistRelatedTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfExpression" nillable="true" type="StorageBinConditionOfExpression" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionSet" nillable="true" type="StorageBinConditionSet" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLineNotPlaned" nillable="true" type="StorageBinConditionForStorageLineNotPlaned" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForLockGroup" nillable="true" type="StorageBinConditionForLockGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStateType" nillable="true" type="StorageBinConditionForStateType" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfDualExpression" nillable="true" type="StorageBinConditionOfDualExpression" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForGoodsCount" nillable="true" type="StorageBinConditionForGoodsCount" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="ConditionOperation" type="ConditionOperation" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="StorageBinConditionForStorageLineNotPlaned">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="StorageBinConditionForLockGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="StorageBinConditionForStateType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StateType" nillable="true" type="StateType" />
+    </xs:sequence>
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="StorageBinConditionOfDualExpression">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="FirstExpression" type="xs:string" />
+    <xs:attribute name="StringMatchType" type="StringMatchType" />
+    <xs:attribute name="SecnodExpression" type="xs:string" />
+    <xs:attribute name="SecondExpression" type="xs:string" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="StorageBinConditionForGoodsCount">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GoodsCount" nillable="true" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOf2">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForExchangingInStorageLine" nillable="true" type="StorageBinConditionForExchangingInStorageLine" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForPropertyOfStorageBin" nillable="true" type="StorageBinConditionForPropertyOfStorageBin" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForReachableLoadingInStorageLine" nillable="true" type="StorageBinConditionForReachableLoadingInStorageLine" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForReachableUnloadingInStorageLine" nillable="true" type="StorageBinConditionForReachableUnloadingInStorageLine" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLine" nillable="true" type="StorageBinConditionForStorageLine" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForNoConflictInStorageLine" nillable="true" type="StorageBinConditionForNoConflictInStorageLine" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLineNotRequired" nillable="true" type="StorageBinConditionForStorageLineNotRequired" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfDirectToStorage" nillable="true" type="StorageBinConditionOfDirectToStorage" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfExistRelatedTaskGroup" nillable="true" type="StorageBinConditionOfExistRelatedTaskGroup" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfExpression" nillable="true" type="StorageBinConditionOfExpression" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionSet" nillable="true" type="StorageBinConditionSet" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLineNotPlaned" nillable="true" type="StorageBinConditionForStorageLineNotPlaned" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForLockGroup" nillable="true" type="StorageBinConditionForLockGroup" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStateType" nillable="true" type="StorageBinConditionForStateType" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfDualExpression" nillable="true" type="StorageBinConditionOfDualExpression" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForGoodsCount" nillable="true" type="StorageBinConditionForGoodsCount" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="StorageBinOrderBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForConditionFirst" nillable="true" type="StorageBinOrderForConditionFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForBreadthFirst" nillable="true" type="StorageBinOrderForBreadthFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForDistanceBetweenStorages" nillable="true" type="StorageBinOrderForDistanceBetweenStorages" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForRunStatusOfStorageLine" nillable="true" type="StorageBinOrderForRunStatusOfStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderWithStorageLineDeepFirst" nillable="true" type="StorageBinOrderWithStorageLineDeepFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForRunStatus" nillable="true" type="StorageBinOrderForRunStatus" />
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StorageBinOrderForConditionFirst">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionForExchangingInStorageLine" nillable="true" type="StorageBinConditionForExchangingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionForPropertyOfStorageBin" nillable="true" type="StorageBinConditionForPropertyOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionForReachableLoadingInStorageLine" nillable="true" type="StorageBinConditionForReachableLoadingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionForReachableUnloadingInStorageLine" nillable="true" type="StorageBinConditionForReachableUnloadingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionForStorageLine" nillable="true" type="StorageBinConditionForStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionForNoConflictInStorageLine" nillable="true" type="StorageBinConditionForNoConflictInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionForStorageLineNotRequired" nillable="true" type="StorageBinConditionForStorageLineNotRequired" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionOfDirectToStorage" nillable="true" type="StorageBinConditionOfDirectToStorage" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionOfExistRelatedTaskGroup" nillable="true" type="StorageBinConditionOfExistRelatedTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionOfExpression" nillable="true" type="StorageBinConditionOfExpression" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionSet" nillable="true" type="StorageBinConditionSet" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionForStorageLineNotPlaned" nillable="true" type="StorageBinConditionForStorageLineNotPlaned" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionForLockGroup" nillable="true" type="StorageBinConditionForLockGroup" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionForStateType" nillable="true" type="StorageBinConditionForStateType" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionOfDualExpression" nillable="true" type="StorageBinConditionOfDualExpression" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionForGoodsCount" nillable="true" type="StorageBinConditionForGoodsCount" />
+      </xs:choice>
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForConditionFirst" nillable="true" type="StorageBinOrderForConditionFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForBreadthFirst" nillable="true" type="StorageBinOrderForBreadthFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForDistanceBetweenStorages" nillable="true" type="StorageBinOrderForDistanceBetweenStorages" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForRunStatusOfStorageLine" nillable="true" type="StorageBinOrderForRunStatusOfStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderWithStorageLineDeepFirst" nillable="true" type="StorageBinOrderWithStorageLineDeepFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForRunStatus" nillable="true" type="StorageBinOrderForRunStatus" />
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StorageBinOrderForBreadthFirst">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionForExchangingInStorageLine" nillable="true" type="StorageBinConditionForExchangingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionForPropertyOfStorageBin" nillable="true" type="StorageBinConditionForPropertyOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionForReachableLoadingInStorageLine" nillable="true" type="StorageBinConditionForReachableLoadingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionForReachableUnloadingInStorageLine" nillable="true" type="StorageBinConditionForReachableUnloadingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionForStorageLine" nillable="true" type="StorageBinConditionForStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionForNoConflictInStorageLine" nillable="true" type="StorageBinConditionForNoConflictInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionForStorageLineNotRequired" nillable="true" type="StorageBinConditionForStorageLineNotRequired" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionOfDirectToStorage" nillable="true" type="StorageBinConditionOfDirectToStorage" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionOfExistRelatedTaskGroup" nillable="true" type="StorageBinConditionOfExistRelatedTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionOfExpression" nillable="true" type="StorageBinConditionOfExpression" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionSet" nillable="true" type="StorageBinConditionSet" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionForStorageLineNotPlaned" nillable="true" type="StorageBinConditionForStorageLineNotPlaned" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionForLockGroup" nillable="true" type="StorageBinConditionForLockGroup" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionForStateType" nillable="true" type="StorageBinConditionForStateType" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionOfDualExpression" nillable="true" type="StorageBinConditionOfDualExpression" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinConditionForGoodsCount" nillable="true" type="StorageBinConditionForGoodsCount" />
+      </xs:choice>
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForConditionFirst" nillable="true" type="StorageBinOrderForConditionFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForBreadthFirst" nillable="true" type="StorageBinOrderForBreadthFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForDistanceBetweenStorages" nillable="true" type="StorageBinOrderForDistanceBetweenStorages" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForRunStatusOfStorageLine" nillable="true" type="StorageBinOrderForRunStatusOfStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderWithStorageLineDeepFirst" nillable="true" type="StorageBinOrderWithStorageLineDeepFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForRunStatus" nillable="true" type="StorageBinOrderForRunStatus" />
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StorageBinOrderForDistanceBetweenStorages">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForConditionFirst" nillable="true" type="StorageBinOrderForConditionFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForBreadthFirst" nillable="true" type="StorageBinOrderForBreadthFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForDistanceBetweenStorages" nillable="true" type="StorageBinOrderForDistanceBetweenStorages" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForRunStatusOfStorageLine" nillable="true" type="StorageBinOrderForRunStatusOfStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderWithStorageLineDeepFirst" nillable="true" type="StorageBinOrderWithStorageLineDeepFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForRunStatus" nillable="true" type="StorageBinOrderForRunStatus" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="ConfigFile" type="xs:string" />
+    <xs:attribute name="StorageBinFunction" type="StorageBinFunction" />
+    <xs:attribute name="SourceStorageFunction" type="xs:string" />
+    <xs:attribute name="TargetStorageFunction" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="StorageBinOrderForRunStatusOfStorageLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForConditionFirst" nillable="true" type="StorageBinOrderForConditionFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForBreadthFirst" nillable="true" type="StorageBinOrderForBreadthFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForDistanceBetweenStorages" nillable="true" type="StorageBinOrderForDistanceBetweenStorages" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForRunStatusOfStorageLine" nillable="true" type="StorageBinOrderForRunStatusOfStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderWithStorageLineDeepFirst" nillable="true" type="StorageBinOrderWithStorageLineDeepFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForRunStatus" nillable="true" type="StorageBinOrderForRunStatus" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="Property" type="xs:string" />
+    <xs:attribute name="Descending" type="xs:boolean" />
+    <xs:attribute name="NumericMode" type="xs:boolean" />
+    <xs:attribute name="DefaultValue" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="StorageBinOrderWithStorageLineDeepFirst">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForConditionFirst" nillable="true" type="StorageBinOrderForConditionFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForBreadthFirst" nillable="true" type="StorageBinOrderForBreadthFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForDistanceBetweenStorages" nillable="true" type="StorageBinOrderForDistanceBetweenStorages" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForRunStatusOfStorageLine" nillable="true" type="StorageBinOrderForRunStatusOfStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderWithStorageLineDeepFirst" nillable="true" type="StorageBinOrderWithStorageLineDeepFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForRunStatus" nillable="true" type="StorageBinOrderForRunStatus" />
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StorageBinOrderForRunStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForConditionFirst" nillable="true" type="StorageBinOrderForConditionFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForBreadthFirst" nillable="true" type="StorageBinOrderForBreadthFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForDistanceBetweenStorages" nillable="true" type="StorageBinOrderForDistanceBetweenStorages" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForRunStatusOfStorageLine" nillable="true" type="StorageBinOrderForRunStatusOfStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderWithStorageLineDeepFirst" nillable="true" type="StorageBinOrderWithStorageLineDeepFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForRunStatus" nillable="true" type="StorageBinOrderForRunStatus" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="Property" type="xs:string" />
+    <xs:attribute name="Descending" type="xs:boolean" />
+    <xs:attribute name="NumericMode" type="xs:boolean" />
+    <xs:attribute name="DefaultValue" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="StorageBinSelecterForStorageLineByRegex">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageLineRegex" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditions" nillable="true" type="StorageBinConditionBase" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForExchangingInStorageLine" nillable="true" type="StorageBinConditionForExchangingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForPropertyOfStorageBin" nillable="true" type="StorageBinConditionForPropertyOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForReachableLoadingInStorageLine" nillable="true" type="StorageBinConditionForReachableLoadingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForReachableUnloadingInStorageLine" nillable="true" type="StorageBinConditionForReachableUnloadingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLine" nillable="true" type="StorageBinConditionForStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForNoConflictInStorageLine" nillable="true" type="StorageBinConditionForNoConflictInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLineNotRequired" nillable="true" type="StorageBinConditionForStorageLineNotRequired" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfDirectToStorage" nillable="true" type="StorageBinConditionOfDirectToStorage" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfExistRelatedTaskGroup" nillable="true" type="StorageBinConditionOfExistRelatedTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfExpression" nillable="true" type="StorageBinConditionOfExpression" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionSet" nillable="true" type="StorageBinConditionSet" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLineNotPlaned" nillable="true" type="StorageBinConditionForStorageLineNotPlaned" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForLockGroup" nillable="true" type="StorageBinConditionForLockGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStateType" nillable="true" type="StorageBinConditionForStateType" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfDualExpression" nillable="true" type="StorageBinConditionOfDualExpression" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForGoodsCount" nillable="true" type="StorageBinConditionForGoodsCount" />
+      </xs:choice>
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrder" nillable="true" type="StorageBinOrderBase" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForConditionFirst" nillable="true" type="StorageBinOrderForConditionFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForBreadthFirst" nillable="true" type="StorageBinOrderForBreadthFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForDistanceBetweenStorages" nillable="true" type="StorageBinOrderForDistanceBetweenStorages" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForRunStatusOfStorageLine" nillable="true" type="StorageBinOrderForRunStatusOfStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderWithStorageLineDeepFirst" nillable="true" type="StorageBinOrderWithStorageLineDeepFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForRunStatus" nillable="true" type="StorageBinOrderForRunStatus" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="Function" type="StorageBinFunction" />
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="StorageBinSelecterFromSQLScript">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SQLScript" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditions" nillable="true" type="StorageBinConditionBase" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForExchangingInStorageLine" nillable="true" type="StorageBinConditionForExchangingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForPropertyOfStorageBin" nillable="true" type="StorageBinConditionForPropertyOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForReachableLoadingInStorageLine" nillable="true" type="StorageBinConditionForReachableLoadingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForReachableUnloadingInStorageLine" nillable="true" type="StorageBinConditionForReachableUnloadingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLine" nillable="true" type="StorageBinConditionForStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForNoConflictInStorageLine" nillable="true" type="StorageBinConditionForNoConflictInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLineNotRequired" nillable="true" type="StorageBinConditionForStorageLineNotRequired" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfDirectToStorage" nillable="true" type="StorageBinConditionOfDirectToStorage" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfExistRelatedTaskGroup" nillable="true" type="StorageBinConditionOfExistRelatedTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfExpression" nillable="true" type="StorageBinConditionOfExpression" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionSet" nillable="true" type="StorageBinConditionSet" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLineNotPlaned" nillable="true" type="StorageBinConditionForStorageLineNotPlaned" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForLockGroup" nillable="true" type="StorageBinConditionForLockGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStateType" nillable="true" type="StorageBinConditionForStateType" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfDualExpression" nillable="true" type="StorageBinConditionOfDualExpression" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForGoodsCount" nillable="true" type="StorageBinConditionForGoodsCount" />
+      </xs:choice>
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrder" nillable="true" type="StorageBinOrderBase" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForConditionFirst" nillable="true" type="StorageBinOrderForConditionFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForBreadthFirst" nillable="true" type="StorageBinOrderForBreadthFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForDistanceBetweenStorages" nillable="true" type="StorageBinOrderForDistanceBetweenStorages" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForRunStatusOfStorageLine" nillable="true" type="StorageBinOrderForRunStatusOfStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderWithStorageLineDeepFirst" nillable="true" type="StorageBinOrderWithStorageLineDeepFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForRunStatus" nillable="true" type="StorageBinOrderForRunStatus" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="Function" type="StorageBinFunction" />
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="StorageBinSelecterSet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterForSegment" nillable="true" type="StorageBinSelecterForSegment" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterForStorageLine" nillable="true" type="StorageBinSelecterForStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterForStorageLineByRegex" nillable="true" type="StorageBinSelecterForStorageLineByRegex" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterFromSQLScript" nillable="true" type="StorageBinSelecterFromSQLScript" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterSet" nillable="true" type="StorageBinSelecterSet" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterWithSpecifiedGroup" nillable="true" type="StorageBinSelecterWithSpecifiedGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterOfPredefine" nillable="true" type="StorageBinSelecterOfPredefine" />
+      </xs:choice>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditions" nillable="true" type="StorageBinConditionBase" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForExchangingInStorageLine" nillable="true" type="StorageBinConditionForExchangingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForPropertyOfStorageBin" nillable="true" type="StorageBinConditionForPropertyOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForReachableLoadingInStorageLine" nillable="true" type="StorageBinConditionForReachableLoadingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForReachableUnloadingInStorageLine" nillable="true" type="StorageBinConditionForReachableUnloadingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLine" nillable="true" type="StorageBinConditionForStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForNoConflictInStorageLine" nillable="true" type="StorageBinConditionForNoConflictInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLineNotRequired" nillable="true" type="StorageBinConditionForStorageLineNotRequired" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfDirectToStorage" nillable="true" type="StorageBinConditionOfDirectToStorage" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfExistRelatedTaskGroup" nillable="true" type="StorageBinConditionOfExistRelatedTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfExpression" nillable="true" type="StorageBinConditionOfExpression" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionSet" nillable="true" type="StorageBinConditionSet" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLineNotPlaned" nillable="true" type="StorageBinConditionForStorageLineNotPlaned" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForLockGroup" nillable="true" type="StorageBinConditionForLockGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStateType" nillable="true" type="StorageBinConditionForStateType" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfDualExpression" nillable="true" type="StorageBinConditionOfDualExpression" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForGoodsCount" nillable="true" type="StorageBinConditionForGoodsCount" />
+      </xs:choice>
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrder" nillable="true" type="StorageBinOrderBase" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForConditionFirst" nillable="true" type="StorageBinOrderForConditionFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForBreadthFirst" nillable="true" type="StorageBinOrderForBreadthFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForDistanceBetweenStorages" nillable="true" type="StorageBinOrderForDistanceBetweenStorages" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForRunStatusOfStorageLine" nillable="true" type="StorageBinOrderForRunStatusOfStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderWithStorageLineDeepFirst" nillable="true" type="StorageBinOrderWithStorageLineDeepFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForRunStatus" nillable="true" type="StorageBinOrderForRunStatus" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="Function" type="StorageBinFunction" />
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="StorageBinSelecterWithSpecifiedGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Group" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditions" nillable="true" type="StorageBinConditionBase" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForExchangingInStorageLine" nillable="true" type="StorageBinConditionForExchangingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForPropertyOfStorageBin" nillable="true" type="StorageBinConditionForPropertyOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForReachableLoadingInStorageLine" nillable="true" type="StorageBinConditionForReachableLoadingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForReachableUnloadingInStorageLine" nillable="true" type="StorageBinConditionForReachableUnloadingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLine" nillable="true" type="StorageBinConditionForStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForNoConflictInStorageLine" nillable="true" type="StorageBinConditionForNoConflictInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLineNotRequired" nillable="true" type="StorageBinConditionForStorageLineNotRequired" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfDirectToStorage" nillable="true" type="StorageBinConditionOfDirectToStorage" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfExistRelatedTaskGroup" nillable="true" type="StorageBinConditionOfExistRelatedTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfExpression" nillable="true" type="StorageBinConditionOfExpression" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionSet" nillable="true" type="StorageBinConditionSet" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLineNotPlaned" nillable="true" type="StorageBinConditionForStorageLineNotPlaned" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForLockGroup" nillable="true" type="StorageBinConditionForLockGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStateType" nillable="true" type="StorageBinConditionForStateType" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfDualExpression" nillable="true" type="StorageBinConditionOfDualExpression" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForGoodsCount" nillable="true" type="StorageBinConditionForGoodsCount" />
+      </xs:choice>
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrder" nillable="true" type="StorageBinOrderBase" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForConditionFirst" nillable="true" type="StorageBinOrderForConditionFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForBreadthFirst" nillable="true" type="StorageBinOrderForBreadthFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForDistanceBetweenStorages" nillable="true" type="StorageBinOrderForDistanceBetweenStorages" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForRunStatusOfStorageLine" nillable="true" type="StorageBinOrderForRunStatusOfStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderWithStorageLineDeepFirst" nillable="true" type="StorageBinOrderWithStorageLineDeepFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForRunStatus" nillable="true" type="StorageBinOrderForRunStatus" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="Order" type="xs:string" />
+    <xs:attribute name="Function" type="StorageBinFunction" />
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="StorageBinSelecterOfPredefine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBin" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditions" nillable="true" type="StorageBinConditionBase" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForExchangingInStorageLine" nillable="true" type="StorageBinConditionForExchangingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForPropertyOfStorageBin" nillable="true" type="StorageBinConditionForPropertyOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForReachableLoadingInStorageLine" nillable="true" type="StorageBinConditionForReachableLoadingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForReachableUnloadingInStorageLine" nillable="true" type="StorageBinConditionForReachableUnloadingInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLine" nillable="true" type="StorageBinConditionForStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForNoConflictInStorageLine" nillable="true" type="StorageBinConditionForNoConflictInStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLineNotRequired" nillable="true" type="StorageBinConditionForStorageLineNotRequired" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfDirectToStorage" nillable="true" type="StorageBinConditionOfDirectToStorage" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfExistRelatedTaskGroup" nillable="true" type="StorageBinConditionOfExistRelatedTaskGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfExpression" nillable="true" type="StorageBinConditionOfExpression" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionSet" nillable="true" type="StorageBinConditionSet" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStorageLineNotPlaned" nillable="true" type="StorageBinConditionForStorageLineNotPlaned" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForLockGroup" nillable="true" type="StorageBinConditionForLockGroup" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForStateType" nillable="true" type="StorageBinConditionForStateType" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionOfDualExpression" nillable="true" type="StorageBinConditionOfDualExpression" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinConditionForGoodsCount" nillable="true" type="StorageBinConditionForGoodsCount" />
+      </xs:choice>
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrder" nillable="true" type="StorageBinOrderBase" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForConditionFirst" nillable="true" type="StorageBinOrderForConditionFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForBreadthFirst" nillable="true" type="StorageBinOrderForBreadthFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForDistanceBetweenStorages" nillable="true" type="StorageBinOrderForDistanceBetweenStorages" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForRunStatusOfStorageLine" nillable="true" type="StorageBinOrderForRunStatusOfStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderWithStorageLineDeepFirst" nillable="true" type="StorageBinOrderWithStorageLineDeepFirst" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StorageBinOrderForRunStatus" nillable="true" type="StorageBinOrderForRunStatus" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="Function" type="StorageBinFunction" />
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOf3">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterForSegment" nillable="true" type="StorageBinSelecterForSegment" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterForStorageLine" nillable="true" type="StorageBinSelecterForStorageLine" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterForStorageLineByRegex" nillable="true" type="StorageBinSelecterForStorageLineByRegex" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterFromSQLScript" nillable="true" type="StorageBinSelecterFromSQLScript" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterSet" nillable="true" type="StorageBinSelecterSet" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterWithSpecifiedGroup" nillable="true" type="StorageBinSelecterWithSpecifiedGroup" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterOfPredefine" nillable="true" type="StorageBinSelecterOfPredefine" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="TransportationConditionOfExchangeForStorageLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Property" type="xs:string" />
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="TransportationConditionOfExpression">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="FirstExpression" type="xs:string" />
+    <xs:attribute name="StringMatchType" type="StringMatchType" />
+    <xs:attribute name="SecondExpression" type="xs:string" />
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="TransportationConditionOfSingleExpression">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Expression" type="xs:string" />
+    <xs:attribute name="StringMatchType" type="StringMatchType" />
+    <xs:attribute name="Value" type="xs:string" />
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="TransportationConditionOfDualExpression">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="FirstExpression" type="xs:string" />
+    <xs:attribute name="StringMatchType" type="StringMatchType" />
+    <xs:attribute name="SecnodExpression" type="xs:string" />
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="TransportationConditionSet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TransportationConditionOfExchangeForStorageLine" nillable="true" type="TransportationConditionOfExchangeForStorageLine" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TransportationConditionOfExpression" nillable="true" type="TransportationConditionOfExpression" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TransportationConditionOfSingleExpression" nillable="true" type="TransportationConditionOfSingleExpression" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TransportationConditionOfDualExpression" nillable="true" type="TransportationConditionOfDualExpression" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TransportationConditionSet" nillable="true" type="TransportationConditionSet" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="ConditionOperation" type="ConditionOperation" />
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="Negative" type="xs:boolean" />
+  </xs:complexType>
+  <xs:simpleType name="SelectMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BothFromNone" />
+      <xs:enumeration value="TargetFromNone" />
+      <xs:enumeration value="SourceFromNone" />
+      <xs:enumeration value="SourceFromTarget" />
+      <xs:enumeration value="TargetFromSource" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ArrayOf4">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterForSegment" nillable="true" type="StorageBinSelecterForSegment" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterForStorageLine" nillable="true" type="StorageBinSelecterForStorageLine" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterForStorageLineByRegex" nillable="true" type="StorageBinSelecterForStorageLineByRegex" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterFromSQLScript" nillable="true" type="StorageBinSelecterFromSQLScript" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterSet" nillable="true" type="StorageBinSelecterSet" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterWithSpecifiedGroup" nillable="true" type="StorageBinSelecterWithSpecifiedGroup" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageBinSelecterOfPredefine" nillable="true" type="StorageBinSelecterOfPredefine" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="ArrayOf5">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TransportationConditionOfExchangeForStorageLine" nillable="true" type="TransportationConditionOfExchangeForStorageLine" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TransportationConditionOfExpression" nillable="true" type="TransportationConditionOfExpression" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TransportationConditionOfSingleExpression" nillable="true" type="TransportationConditionOfSingleExpression" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TransportationConditionOfDualExpression" nillable="true" type="TransportationConditionOfDualExpression" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TransportationConditionSet" nillable="true" type="TransportationConditionSet" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="TaskGroupStyle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupSetter" nillable="true" type="TaskGroupSetter" />
+    </xs:sequence>
+    <xs:attribute name="TargetType" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="TaskGroupSetter">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="Property" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="DetectSourceStorageTaskGroupCreater">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCountOfAGV" nillable="true" type="CreaterConditionForCountOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForTime" nillable="true" type="CreaterConditionForTime" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForArrangedTaskGroups" nillable="true" type="CreaterConditionForArrangedTaskGroups" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBreakdownAGVInRegions" nillable="true" type="CreaterConditionForBreakdownAGVInRegions" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLastTaskGroupOfAGV" nillable="true" type="CreaterConditionForLastTaskGroupOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForWaitingTimeOfAGV" nillable="true" type="CreaterConditionForWaitingTimeOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLowBatteryOfAGV" nillable="true" type="CreaterConditionForLowBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePathOfArrangedTasks" nillable="true" type="CreaterConditionForExclusivePathOfArrangedTasks" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePath" nillable="true" type="CreaterConditionForExclusivePath" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfAGV" nillable="true" type="CreaterConditionForPropertyOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBatteryOfAGV" nillable="true" type="CreaterConditionForBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCarryGoodsOfAGV" nillable="true" type="CreaterConditionForCarryGoodsOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCheckAGVPositionCloseTo" nillable="true" type="CreaterConditionForCheckAGVPositionCloseTo" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionOfDevice" nillable="true" type="CreaterConditionOfDevice" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForStateTypeOfStorageBin" nillable="true" type="CreaterConditionForStateTypeOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForSystemSettings" nillable="true" type="CreaterConditionForSystemSettings" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionSet" nillable="true" type="CreaterConditionSet" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfStorageBin" nillable="true" type="CreaterConditionForPropertyOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForIDOfAGV" nillable="true" type="CreaterConditionForIDOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForDirectionOfAGV" nillable="true" type="CreaterConditionForDirectionOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPositionOfAGV" nillable="true" type="CreaterConditionForPositionOfAGV" />
+      </xs:choice>
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="DefaultAGVStrategy" nillable="true" type="DefaultAGVStrategy" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ClosestAGVStrategy" nillable="true" type="ClosestAGVStrategy" />
+      </xs:choice>
+      <xs:element minOccurs="0" maxOccurs="1" name="TransportationSelecterOfPredefine" nillable="true" type="TransportationSelecterOfPredefine" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AppendedTaskGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupStyle" nillable="true" type="TaskGroupStyle" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="Cancelable" type="xs:boolean" />
+    <xs:attribute name="Priority" type="xs:int" />
+  </xs:complexType>
+  <xs:complexType name="DetectTargetStorageTaskGroupCreater">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCountOfAGV" nillable="true" type="CreaterConditionForCountOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForTime" nillable="true" type="CreaterConditionForTime" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForArrangedTaskGroups" nillable="true" type="CreaterConditionForArrangedTaskGroups" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBreakdownAGVInRegions" nillable="true" type="CreaterConditionForBreakdownAGVInRegions" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLastTaskGroupOfAGV" nillable="true" type="CreaterConditionForLastTaskGroupOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForWaitingTimeOfAGV" nillable="true" type="CreaterConditionForWaitingTimeOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLowBatteryOfAGV" nillable="true" type="CreaterConditionForLowBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePathOfArrangedTasks" nillable="true" type="CreaterConditionForExclusivePathOfArrangedTasks" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePath" nillable="true" type="CreaterConditionForExclusivePath" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfAGV" nillable="true" type="CreaterConditionForPropertyOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBatteryOfAGV" nillable="true" type="CreaterConditionForBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCarryGoodsOfAGV" nillable="true" type="CreaterConditionForCarryGoodsOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCheckAGVPositionCloseTo" nillable="true" type="CreaterConditionForCheckAGVPositionCloseTo" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionOfDevice" nillable="true" type="CreaterConditionOfDevice" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForStateTypeOfStorageBin" nillable="true" type="CreaterConditionForStateTypeOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForSystemSettings" nillable="true" type="CreaterConditionForSystemSettings" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionSet" nillable="true" type="CreaterConditionSet" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfStorageBin" nillable="true" type="CreaterConditionForPropertyOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForIDOfAGV" nillable="true" type="CreaterConditionForIDOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForDirectionOfAGV" nillable="true" type="CreaterConditionForDirectionOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPositionOfAGV" nillable="true" type="CreaterConditionForPositionOfAGV" />
+      </xs:choice>
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="DefaultAGVStrategy" nillable="true" type="DefaultAGVStrategy" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ClosestAGVStrategy" nillable="true" type="ClosestAGVStrategy" />
+      </xs:choice>
+      <xs:element minOccurs="0" maxOccurs="1" name="TransportationSelecterOfPredefine" nillable="true" type="TransportationSelecterOfPredefine" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AppendedTaskGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupStyle" nillable="true" type="TaskGroupStyle" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="Cancelable" type="xs:boolean" />
+    <xs:attribute name="Priority" type="xs:int" />
+  </xs:complexType>
+  <xs:complexType name="GetAndMoveTaskGroupCreater">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCountOfAGV" nillable="true" type="CreaterConditionForCountOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForTime" nillable="true" type="CreaterConditionForTime" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForArrangedTaskGroups" nillable="true" type="CreaterConditionForArrangedTaskGroups" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBreakdownAGVInRegions" nillable="true" type="CreaterConditionForBreakdownAGVInRegions" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLastTaskGroupOfAGV" nillable="true" type="CreaterConditionForLastTaskGroupOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForWaitingTimeOfAGV" nillable="true" type="CreaterConditionForWaitingTimeOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLowBatteryOfAGV" nillable="true" type="CreaterConditionForLowBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePathOfArrangedTasks" nillable="true" type="CreaterConditionForExclusivePathOfArrangedTasks" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePath" nillable="true" type="CreaterConditionForExclusivePath" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfAGV" nillable="true" type="CreaterConditionForPropertyOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBatteryOfAGV" nillable="true" type="CreaterConditionForBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCarryGoodsOfAGV" nillable="true" type="CreaterConditionForCarryGoodsOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCheckAGVPositionCloseTo" nillable="true" type="CreaterConditionForCheckAGVPositionCloseTo" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionOfDevice" nillable="true" type="CreaterConditionOfDevice" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForStateTypeOfStorageBin" nillable="true" type="CreaterConditionForStateTypeOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForSystemSettings" nillable="true" type="CreaterConditionForSystemSettings" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionSet" nillable="true" type="CreaterConditionSet" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfStorageBin" nillable="true" type="CreaterConditionForPropertyOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForIDOfAGV" nillable="true" type="CreaterConditionForIDOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForDirectionOfAGV" nillable="true" type="CreaterConditionForDirectionOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPositionOfAGV" nillable="true" type="CreaterConditionForPositionOfAGV" />
+      </xs:choice>
+      <xs:element minOccurs="0" maxOccurs="1" name="Posture" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="DefaultAGVStrategy" nillable="true" type="DefaultAGVStrategy" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ClosestAGVStrategy" nillable="true" type="ClosestAGVStrategy" />
+      </xs:choice>
+      <xs:element minOccurs="0" maxOccurs="1" name="District" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TransportationSelecterOfPredefine" nillable="true" type="TransportationSelecterOfPredefine" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AppendedTaskGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupStyle" nillable="true" type="TaskGroupStyle" />
+    </xs:sequence>
+    <xs:attribute name="SourceStorageFunction" type="xs:string" />
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="Cancelable" type="xs:boolean" />
+    <xs:attribute name="Priority" type="xs:int" />
+  </xs:complexType>
+  <xs:complexType name="MoveToStorageTaskGroupCreater">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCountOfAGV" nillable="true" type="CreaterConditionForCountOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForTime" nillable="true" type="CreaterConditionForTime" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForArrangedTaskGroups" nillable="true" type="CreaterConditionForArrangedTaskGroups" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBreakdownAGVInRegions" nillable="true" type="CreaterConditionForBreakdownAGVInRegions" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLastTaskGroupOfAGV" nillable="true" type="CreaterConditionForLastTaskGroupOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForWaitingTimeOfAGV" nillable="true" type="CreaterConditionForWaitingTimeOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLowBatteryOfAGV" nillable="true" type="CreaterConditionForLowBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePathOfArrangedTasks" nillable="true" type="CreaterConditionForExclusivePathOfArrangedTasks" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePath" nillable="true" type="CreaterConditionForExclusivePath" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfAGV" nillable="true" type="CreaterConditionForPropertyOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBatteryOfAGV" nillable="true" type="CreaterConditionForBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCarryGoodsOfAGV" nillable="true" type="CreaterConditionForCarryGoodsOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCheckAGVPositionCloseTo" nillable="true" type="CreaterConditionForCheckAGVPositionCloseTo" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionOfDevice" nillable="true" type="CreaterConditionOfDevice" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForStateTypeOfStorageBin" nillable="true" type="CreaterConditionForStateTypeOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForSystemSettings" nillable="true" type="CreaterConditionForSystemSettings" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionSet" nillable="true" type="CreaterConditionSet" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfStorageBin" nillable="true" type="CreaterConditionForPropertyOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForIDOfAGV" nillable="true" type="CreaterConditionForIDOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForDirectionOfAGV" nillable="true" type="CreaterConditionForDirectionOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPositionOfAGV" nillable="true" type="CreaterConditionForPositionOfAGV" />
+      </xs:choice>
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="DefaultAGVStrategy" nillable="true" type="DefaultAGVStrategy" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ClosestAGVStrategy" nillable="true" type="ClosestAGVStrategy" />
+      </xs:choice>
+      <xs:element minOccurs="0" maxOccurs="1" name="TransportationSelecterOfPredefine" nillable="true" type="TransportationSelecterOfPredefine" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AppendedTaskGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupStyle" nillable="true" type="TaskGroupStyle" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="Cancelable" type="xs:boolean" />
+    <xs:attribute name="Priority" type="xs:int" />
+  </xs:complexType>
+  <xs:complexType name="WaitTaskGroupCreater">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCountOfAGV" nillable="true" type="CreaterConditionForCountOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForTime" nillable="true" type="CreaterConditionForTime" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForArrangedTaskGroups" nillable="true" type="CreaterConditionForArrangedTaskGroups" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBreakdownAGVInRegions" nillable="true" type="CreaterConditionForBreakdownAGVInRegions" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLastTaskGroupOfAGV" nillable="true" type="CreaterConditionForLastTaskGroupOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForWaitingTimeOfAGV" nillable="true" type="CreaterConditionForWaitingTimeOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLowBatteryOfAGV" nillable="true" type="CreaterConditionForLowBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePathOfArrangedTasks" nillable="true" type="CreaterConditionForExclusivePathOfArrangedTasks" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePath" nillable="true" type="CreaterConditionForExclusivePath" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfAGV" nillable="true" type="CreaterConditionForPropertyOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBatteryOfAGV" nillable="true" type="CreaterConditionForBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCarryGoodsOfAGV" nillable="true" type="CreaterConditionForCarryGoodsOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCheckAGVPositionCloseTo" nillable="true" type="CreaterConditionForCheckAGVPositionCloseTo" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionOfDevice" nillable="true" type="CreaterConditionOfDevice" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForStateTypeOfStorageBin" nillable="true" type="CreaterConditionForStateTypeOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForSystemSettings" nillable="true" type="CreaterConditionForSystemSettings" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionSet" nillable="true" type="CreaterConditionSet" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfStorageBin" nillable="true" type="CreaterConditionForPropertyOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForIDOfAGV" nillable="true" type="CreaterConditionForIDOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForDirectionOfAGV" nillable="true" type="CreaterConditionForDirectionOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPositionOfAGV" nillable="true" type="CreaterConditionForPositionOfAGV" />
+      </xs:choice>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AppendedTaskGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupStyle" nillable="true" type="TaskGroupStyle" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="Cancelable" type="xs:boolean" />
+    <xs:attribute name="Priority" type="xs:int" />
+  </xs:complexType>
+  <xs:complexType name="MoveToPostureTaskGroupCreater">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCountOfAGV" nillable="true" type="CreaterConditionForCountOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForTime" nillable="true" type="CreaterConditionForTime" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForArrangedTaskGroups" nillable="true" type="CreaterConditionForArrangedTaskGroups" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBreakdownAGVInRegions" nillable="true" type="CreaterConditionForBreakdownAGVInRegions" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLastTaskGroupOfAGV" nillable="true" type="CreaterConditionForLastTaskGroupOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForWaitingTimeOfAGV" nillable="true" type="CreaterConditionForWaitingTimeOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLowBatteryOfAGV" nillable="true" type="CreaterConditionForLowBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePathOfArrangedTasks" nillable="true" type="CreaterConditionForExclusivePathOfArrangedTasks" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePath" nillable="true" type="CreaterConditionForExclusivePath" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfAGV" nillable="true" type="CreaterConditionForPropertyOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBatteryOfAGV" nillable="true" type="CreaterConditionForBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCarryGoodsOfAGV" nillable="true" type="CreaterConditionForCarryGoodsOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCheckAGVPositionCloseTo" nillable="true" type="CreaterConditionForCheckAGVPositionCloseTo" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionOfDevice" nillable="true" type="CreaterConditionOfDevice" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForStateTypeOfStorageBin" nillable="true" type="CreaterConditionForStateTypeOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForSystemSettings" nillable="true" type="CreaterConditionForSystemSettings" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionSet" nillable="true" type="CreaterConditionSet" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfStorageBin" nillable="true" type="CreaterConditionForPropertyOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForIDOfAGV" nillable="true" type="CreaterConditionForIDOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForDirectionOfAGV" nillable="true" type="CreaterConditionForDirectionOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPositionOfAGV" nillable="true" type="CreaterConditionForPositionOfAGV" />
+      </xs:choice>
+      <xs:element minOccurs="0" maxOccurs="1" name="Posture" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="District" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AppendedTaskGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupStyle" nillable="true" type="TaskGroupStyle" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="Cancelable" type="xs:boolean" />
+    <xs:attribute name="Priority" type="xs:int" />
+  </xs:complexType>
+  <xs:complexType name="PutTaskGroupCreater">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCountOfAGV" nillable="true" type="CreaterConditionForCountOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForTime" nillable="true" type="CreaterConditionForTime" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForArrangedTaskGroups" nillable="true" type="CreaterConditionForArrangedTaskGroups" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBreakdownAGVInRegions" nillable="true" type="CreaterConditionForBreakdownAGVInRegions" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLastTaskGroupOfAGV" nillable="true" type="CreaterConditionForLastTaskGroupOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForWaitingTimeOfAGV" nillable="true" type="CreaterConditionForWaitingTimeOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLowBatteryOfAGV" nillable="true" type="CreaterConditionForLowBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePathOfArrangedTasks" nillable="true" type="CreaterConditionForExclusivePathOfArrangedTasks" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePath" nillable="true" type="CreaterConditionForExclusivePath" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfAGV" nillable="true" type="CreaterConditionForPropertyOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBatteryOfAGV" nillable="true" type="CreaterConditionForBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCarryGoodsOfAGV" nillable="true" type="CreaterConditionForCarryGoodsOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCheckAGVPositionCloseTo" nillable="true" type="CreaterConditionForCheckAGVPositionCloseTo" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionOfDevice" nillable="true" type="CreaterConditionOfDevice" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForStateTypeOfStorageBin" nillable="true" type="CreaterConditionForStateTypeOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForSystemSettings" nillable="true" type="CreaterConditionForSystemSettings" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionSet" nillable="true" type="CreaterConditionSet" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfStorageBin" nillable="true" type="CreaterConditionForPropertyOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForIDOfAGV" nillable="true" type="CreaterConditionForIDOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForDirectionOfAGV" nillable="true" type="CreaterConditionForDirectionOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPositionOfAGV" nillable="true" type="CreaterConditionForPositionOfAGV" />
+      </xs:choice>
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="DefaultAGVStrategy" nillable="true" type="DefaultAGVStrategy" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ClosestAGVStrategy" nillable="true" type="ClosestAGVStrategy" />
+      </xs:choice>
+      <xs:element minOccurs="0" maxOccurs="1" name="TransportationSelecterOfPredefine" nillable="true" type="TransportationSelecterOfPredefine" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AppendedTaskGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupStyle" nillable="true" type="TaskGroupStyle" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="Cancelable" type="xs:boolean" />
+    <xs:attribute name="Priority" type="xs:int" />
+  </xs:complexType>
+  <xs:complexType name="GetTaskGroupCreater">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCountOfAGV" nillable="true" type="CreaterConditionForCountOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForTime" nillable="true" type="CreaterConditionForTime" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForArrangedTaskGroups" nillable="true" type="CreaterConditionForArrangedTaskGroups" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBreakdownAGVInRegions" nillable="true" type="CreaterConditionForBreakdownAGVInRegions" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLastTaskGroupOfAGV" nillable="true" type="CreaterConditionForLastTaskGroupOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForWaitingTimeOfAGV" nillable="true" type="CreaterConditionForWaitingTimeOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLowBatteryOfAGV" nillable="true" type="CreaterConditionForLowBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePathOfArrangedTasks" nillable="true" type="CreaterConditionForExclusivePathOfArrangedTasks" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePath" nillable="true" type="CreaterConditionForExclusivePath" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfAGV" nillable="true" type="CreaterConditionForPropertyOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBatteryOfAGV" nillable="true" type="CreaterConditionForBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCarryGoodsOfAGV" nillable="true" type="CreaterConditionForCarryGoodsOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCheckAGVPositionCloseTo" nillable="true" type="CreaterConditionForCheckAGVPositionCloseTo" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionOfDevice" nillable="true" type="CreaterConditionOfDevice" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForStateTypeOfStorageBin" nillable="true" type="CreaterConditionForStateTypeOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForSystemSettings" nillable="true" type="CreaterConditionForSystemSettings" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionSet" nillable="true" type="CreaterConditionSet" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfStorageBin" nillable="true" type="CreaterConditionForPropertyOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForIDOfAGV" nillable="true" type="CreaterConditionForIDOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForDirectionOfAGV" nillable="true" type="CreaterConditionForDirectionOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPositionOfAGV" nillable="true" type="CreaterConditionForPositionOfAGV" />
+      </xs:choice>
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="DefaultAGVStrategy" nillable="true" type="DefaultAGVStrategy" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ClosestAGVStrategy" nillable="true" type="ClosestAGVStrategy" />
+      </xs:choice>
+      <xs:element minOccurs="0" maxOccurs="1" name="TransportationSelecterOfPredefine" nillable="true" type="TransportationSelecterOfPredefine" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AppendedTaskGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupStyle" nillable="true" type="TaskGroupStyle" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="Cancelable" type="xs:boolean" />
+    <xs:attribute name="Priority" type="xs:int" />
+  </xs:complexType>
+  <xs:complexType name="CarryTaskGroupCreater">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCountOfAGV" nillable="true" type="CreaterConditionForCountOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForTime" nillable="true" type="CreaterConditionForTime" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForArrangedTaskGroups" nillable="true" type="CreaterConditionForArrangedTaskGroups" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBreakdownAGVInRegions" nillable="true" type="CreaterConditionForBreakdownAGVInRegions" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLastTaskGroupOfAGV" nillable="true" type="CreaterConditionForLastTaskGroupOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForWaitingTimeOfAGV" nillable="true" type="CreaterConditionForWaitingTimeOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLowBatteryOfAGV" nillable="true" type="CreaterConditionForLowBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePathOfArrangedTasks" nillable="true" type="CreaterConditionForExclusivePathOfArrangedTasks" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePath" nillable="true" type="CreaterConditionForExclusivePath" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfAGV" nillable="true" type="CreaterConditionForPropertyOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBatteryOfAGV" nillable="true" type="CreaterConditionForBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCarryGoodsOfAGV" nillable="true" type="CreaterConditionForCarryGoodsOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCheckAGVPositionCloseTo" nillable="true" type="CreaterConditionForCheckAGVPositionCloseTo" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionOfDevice" nillable="true" type="CreaterConditionOfDevice" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForStateTypeOfStorageBin" nillable="true" type="CreaterConditionForStateTypeOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForSystemSettings" nillable="true" type="CreaterConditionForSystemSettings" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionSet" nillable="true" type="CreaterConditionSet" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfStorageBin" nillable="true" type="CreaterConditionForPropertyOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForIDOfAGV" nillable="true" type="CreaterConditionForIDOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForDirectionOfAGV" nillable="true" type="CreaterConditionForDirectionOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPositionOfAGV" nillable="true" type="CreaterConditionForPositionOfAGV" />
+      </xs:choice>
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="DefaultAGVStrategy" nillable="true" type="DefaultAGVStrategy" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ClosestAGVStrategy" nillable="true" type="ClosestAGVStrategy" />
+      </xs:choice>
+      <xs:element minOccurs="0" maxOccurs="1" name="TransportationSelecterOfPredefine" nillable="true" type="TransportationSelecterOfPredefine" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AppendedTaskGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupStyle" nillable="true" type="TaskGroupStyle" />
+    </xs:sequence>
+    <xs:attribute name="SourceStorageFunction" type="xs:string" />
+    <xs:attribute name="TargetStorageFunction" type="xs:string" />
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="Cancelable" type="xs:boolean" />
+    <xs:attribute name="Priority" type="xs:int" />
+  </xs:complexType>
+  <xs:complexType name="ReturnToParkTaskGroupCreater">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCountOfAGV" nillable="true" type="CreaterConditionForCountOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForTime" nillable="true" type="CreaterConditionForTime" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForArrangedTaskGroups" nillable="true" type="CreaterConditionForArrangedTaskGroups" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBreakdownAGVInRegions" nillable="true" type="CreaterConditionForBreakdownAGVInRegions" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLastTaskGroupOfAGV" nillable="true" type="CreaterConditionForLastTaskGroupOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForWaitingTimeOfAGV" nillable="true" type="CreaterConditionForWaitingTimeOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLowBatteryOfAGV" nillable="true" type="CreaterConditionForLowBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePathOfArrangedTasks" nillable="true" type="CreaterConditionForExclusivePathOfArrangedTasks" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePath" nillable="true" type="CreaterConditionForExclusivePath" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfAGV" nillable="true" type="CreaterConditionForPropertyOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBatteryOfAGV" nillable="true" type="CreaterConditionForBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCarryGoodsOfAGV" nillable="true" type="CreaterConditionForCarryGoodsOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCheckAGVPositionCloseTo" nillable="true" type="CreaterConditionForCheckAGVPositionCloseTo" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionOfDevice" nillable="true" type="CreaterConditionOfDevice" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForStateTypeOfStorageBin" nillable="true" type="CreaterConditionForStateTypeOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForSystemSettings" nillable="true" type="CreaterConditionForSystemSettings" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionSet" nillable="true" type="CreaterConditionSet" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfStorageBin" nillable="true" type="CreaterConditionForPropertyOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForIDOfAGV" nillable="true" type="CreaterConditionForIDOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForDirectionOfAGV" nillable="true" type="CreaterConditionForDirectionOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPositionOfAGV" nillable="true" type="CreaterConditionForPositionOfAGV" />
+      </xs:choice>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ParkId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AppendedTaskGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupStyle" nillable="true" type="TaskGroupStyle" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="Cancelable" type="xs:boolean" />
+    <xs:attribute name="Priority" type="xs:int" />
+  </xs:complexType>
+  <xs:complexType name="ScanCodeOfGoodsInStorageBinTaskGroupCreater">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCountOfAGV" nillable="true" type="CreaterConditionForCountOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForTime" nillable="true" type="CreaterConditionForTime" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForArrangedTaskGroups" nillable="true" type="CreaterConditionForArrangedTaskGroups" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBreakdownAGVInRegions" nillable="true" type="CreaterConditionForBreakdownAGVInRegions" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLastTaskGroupOfAGV" nillable="true" type="CreaterConditionForLastTaskGroupOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForWaitingTimeOfAGV" nillable="true" type="CreaterConditionForWaitingTimeOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLowBatteryOfAGV" nillable="true" type="CreaterConditionForLowBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePathOfArrangedTasks" nillable="true" type="CreaterConditionForExclusivePathOfArrangedTasks" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePath" nillable="true" type="CreaterConditionForExclusivePath" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfAGV" nillable="true" type="CreaterConditionForPropertyOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBatteryOfAGV" nillable="true" type="CreaterConditionForBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCarryGoodsOfAGV" nillable="true" type="CreaterConditionForCarryGoodsOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCheckAGVPositionCloseTo" nillable="true" type="CreaterConditionForCheckAGVPositionCloseTo" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionOfDevice" nillable="true" type="CreaterConditionOfDevice" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForStateTypeOfStorageBin" nillable="true" type="CreaterConditionForStateTypeOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForSystemSettings" nillable="true" type="CreaterConditionForSystemSettings" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionSet" nillable="true" type="CreaterConditionSet" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfStorageBin" nillable="true" type="CreaterConditionForPropertyOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForIDOfAGV" nillable="true" type="CreaterConditionForIDOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForDirectionOfAGV" nillable="true" type="CreaterConditionForDirectionOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPositionOfAGV" nillable="true" type="CreaterConditionForPositionOfAGV" />
+      </xs:choice>
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="DefaultAGVStrategy" nillable="true" type="DefaultAGVStrategy" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ClosestAGVStrategy" nillable="true" type="ClosestAGVStrategy" />
+      </xs:choice>
+      <xs:element minOccurs="0" maxOccurs="1" name="TransportationSelecterOfPredefine" nillable="true" type="TransportationSelecterOfPredefine" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AppendedTaskGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupStyle" nillable="true" type="TaskGroupStyle" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="Cancelable" type="xs:boolean" />
+    <xs:attribute name="Priority" type="xs:int" />
+  </xs:complexType>
+  <xs:complexType name="ScanCodeOfGoodsOnAGVTaskGroupCreater">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCountOfAGV" nillable="true" type="CreaterConditionForCountOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForTime" nillable="true" type="CreaterConditionForTime" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForArrangedTaskGroups" nillable="true" type="CreaterConditionForArrangedTaskGroups" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBreakdownAGVInRegions" nillable="true" type="CreaterConditionForBreakdownAGVInRegions" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLastTaskGroupOfAGV" nillable="true" type="CreaterConditionForLastTaskGroupOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForWaitingTimeOfAGV" nillable="true" type="CreaterConditionForWaitingTimeOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLowBatteryOfAGV" nillable="true" type="CreaterConditionForLowBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePathOfArrangedTasks" nillable="true" type="CreaterConditionForExclusivePathOfArrangedTasks" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePath" nillable="true" type="CreaterConditionForExclusivePath" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfAGV" nillable="true" type="CreaterConditionForPropertyOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBatteryOfAGV" nillable="true" type="CreaterConditionForBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCarryGoodsOfAGV" nillable="true" type="CreaterConditionForCarryGoodsOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCheckAGVPositionCloseTo" nillable="true" type="CreaterConditionForCheckAGVPositionCloseTo" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionOfDevice" nillable="true" type="CreaterConditionOfDevice" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForStateTypeOfStorageBin" nillable="true" type="CreaterConditionForStateTypeOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForSystemSettings" nillable="true" type="CreaterConditionForSystemSettings" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionSet" nillable="true" type="CreaterConditionSet" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfStorageBin" nillable="true" type="CreaterConditionForPropertyOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForIDOfAGV" nillable="true" type="CreaterConditionForIDOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForDirectionOfAGV" nillable="true" type="CreaterConditionForDirectionOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPositionOfAGV" nillable="true" type="CreaterConditionForPositionOfAGV" />
+      </xs:choice>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AppendedTaskGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupStyle" nillable="true" type="TaskGroupStyle" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="Cancelable" type="xs:boolean" />
+    <xs:attribute name="Priority" type="xs:int" />
+  </xs:complexType>
+  <xs:complexType name="SpecifiedTaskClassTaskGroupCreater">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Annotation" nillable="true" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCountOfAGV" nillable="true" type="CreaterConditionForCountOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForTime" nillable="true" type="CreaterConditionForTime" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForArrangedTaskGroups" nillable="true" type="CreaterConditionForArrangedTaskGroups" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBreakdownAGVInRegions" nillable="true" type="CreaterConditionForBreakdownAGVInRegions" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLastTaskGroupOfAGV" nillable="true" type="CreaterConditionForLastTaskGroupOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForWaitingTimeOfAGV" nillable="true" type="CreaterConditionForWaitingTimeOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForLowBatteryOfAGV" nillable="true" type="CreaterConditionForLowBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePathOfArrangedTasks" nillable="true" type="CreaterConditionForExclusivePathOfArrangedTasks" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForExclusivePath" nillable="true" type="CreaterConditionForExclusivePath" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfAGV" nillable="true" type="CreaterConditionForPropertyOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForBatteryOfAGV" nillable="true" type="CreaterConditionForBatteryOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCarryGoodsOfAGV" nillable="true" type="CreaterConditionForCarryGoodsOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForCheckAGVPositionCloseTo" nillable="true" type="CreaterConditionForCheckAGVPositionCloseTo" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionOfDevice" nillable="true" type="CreaterConditionOfDevice" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForStateTypeOfStorageBin" nillable="true" type="CreaterConditionForStateTypeOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForSystemSettings" nillable="true" type="CreaterConditionForSystemSettings" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionSet" nillable="true" type="CreaterConditionSet" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPropertyOfStorageBin" nillable="true" type="CreaterConditionForPropertyOfStorageBin" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForIDOfAGV" nillable="true" type="CreaterConditionForIDOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForDirectionOfAGV" nillable="true" type="CreaterConditionForDirectionOfAGV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="CreaterConditionForPositionOfAGV" nillable="true" type="CreaterConditionForPositionOfAGV" />
+      </xs:choice>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SpecifiedClassTaskInformation" nillable="true" type="SpecifiedClassTaskInformation" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AppendedTaskGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskGroupStyle" nillable="true" type="TaskGroupStyle" />
+    </xs:sequence>
+    <xs:attribute name="Source" type="xs:string" />
+    <xs:attribute name="Target" type="xs:string" />
+    <xs:attribute name="Goods" type="xs:string" />
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="Cancelable" type="xs:boolean" />
+    <xs:attribute name="Priority" type="xs:int" />
+  </xs:complexType>
+  <xs:complexType name="SpecifiedClassTaskInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SpecifiedClassTaskProperty" nillable="true" type="SpecifiedClassTaskProperty" />
+    </xs:sequence>
+    <xs:attribute name="TaskClassName" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="SpecifiedClassTaskProperty">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="Name" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>
